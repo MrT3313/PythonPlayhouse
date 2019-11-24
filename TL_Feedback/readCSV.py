@@ -7,8 +7,11 @@ def open_and_read_CSV(userFilePath):
         # print('reader from function: ', reader, type(reader))
 
         userFile = []
+        count = 0
         for row in reader:
-            userFile.append(row)
+            if count != 0:
+                userFile.append(row)
+            count += 1
         # print(userFile)
         # print('EXAMPLE ROW',userFile[len(userFile)-1])
         # print(type(userFile))

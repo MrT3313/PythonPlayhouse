@@ -1,7 +1,10 @@
 # IMPORTS
+# 1 # Functions
 from readCSV import open_and_read_CSV
 from getColumns import getColumns
 from getUnique import getUnique
+from make_CLASS_student import makeStudents
+from dateRestrictions import dateRestrictions
 
 # 1 # Get User's .csv Data
 # 1.1 # Create Prompt
@@ -23,8 +26,17 @@ userFile = getColumns(userFile)
 print('__mainFunction__: Filtered UserFile type == ', type(userFile), len(userFile))
 
 # 4 # Get Unique Students
-uniqueStudent = getUnique(userFile)
-print('__mainFunction__: uniqueStudent type == ', type(uniqueStudent), len(uniqueStudent))
+uniqueStudents = getUnique(userFile)
+print('__mainFunction__: Unique Students type == ', type(uniqueStudents), len(uniqueStudents))
+
+# 5 # Create Students w/ CLASS: Student
+uniqueStudents = makeStudents(uniqueStudents, userFile)
+print('__mainFunction__: List of CLASS Students type == ', type(uniqueStudents), len(uniqueStudents))
+
+# 6 # REPL => Prompt for Date Restrictions
+userFile = dateRestrictions(userFile, uniqueStudents)
+print('__mainFunction__: Date Restricted UserFile type == ', type(userFile), len(userFile))
+
 
 
 

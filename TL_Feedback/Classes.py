@@ -20,11 +20,13 @@ class Feedback:
 
 # 2 # Student
 class Student:
-    def __init__(self, name, studentFeedback = [], tl_ratings = [], student_avg_tlrating = 'n/a'):
+    def __init__(self, name, studentFeedback = [], tl_ratings = [], student_avg_tlrating = 'n/a', startDate = None, endDate = None):
         self.name = name
         self.studentFeedback = studentFeedback
         self.tl_ratings = tl_ratings
         self.student_avg_tlrating = student_avg_tlrating
+        self.startDate = startDate
+        self.endDate = endDate
     def get_student_AVG_rating(self):
         if len(self.tl_ratings) != 0:
             count = 0
@@ -39,8 +41,23 @@ class Student:
         output += f'Name: {self.name}\n'
         output += f'Student Feedback: {self.studentFeedback} \n {len(self.studentFeedback)} entries\n'
         output += f'TL Ratings: {self.tl_ratings} \n {len(self.tl_ratings)} entries \n'
-        output += f'AVG TL Rating: {self.student_avg_tlrating}'
+        output += f'AVG TL Rating: {self.student_avg_tlrating}\n'
+        
+        output += f'START DATE: {self.startDate}\n'
+        output += f'END DATE: {self.endDate}\n'
+
+        # if self.startDate != None:
+        #     output += f'START DATE: {self.startDate}\n'
+        # if self.endDate != None:
+        #     output += f'END DATE: {self.endDate}\n'
 
         return output
     def __repr__(self):
-        return str(self)
+        output = ['name', 
+            'studentFeedback', 
+            'tl_ratings', 
+            'student_avg_tlrating',
+            'startDate',
+            'endDate'
+        ]
+        return output
