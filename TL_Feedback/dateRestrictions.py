@@ -1,6 +1,17 @@
 from datetime import datetime
 
-def dateRestrictions(fullList, students):
+def set_dateRestrictions(students):
+    '''
+        This is a REPL where the user can update the CLASS: Student.startDate & Student.endDate 
+        Attirbutes left at their defualt value of None will be set to datetime.now()
+    '''
+
+def implement_dateRestrictions(fullList, uniqueStudents):
+    listToReturn = []
+
+    return listToReturn
+
+def dateRestrictions_V1(fullList, students):
     restrictedList = fullList
     list_toReturn = []
 
