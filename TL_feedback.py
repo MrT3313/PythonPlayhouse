@@ -1,67 +1,5 @@
-# -*- WELCOME -*- #
-## INPUT
-    # .csv exported from: dashboards.lambdaschool.com > Overview > Student Feedback 
 
-## Print
-    # [x] overall avg rating
-    # [] Individual Students
-        # 1. Name
-        # 2. List of written feedback
-        # 3. List of TL grades
-        # 4. Avg TL grade from unique student
 
-## Export 
-    # standard excel file --> .xlsx
-# --------------- #
-
-# -*- SETUP -*- #
-# IMPORTS
-import csv
-
-# CLASSES
-# 1 # Feedback
-class Feedback:
-    def __init__(self, student, writtenFeedback, grade):
-        self.student = student 
-        self.writtenFeedback = writtenFeedback
-        self.grade = grade
-    def __str__(self):
-        output = f'-*- FEEDBACK CLASS -*-\n'
-        output += f'Student: {self.student}\n'
-        output += f'Written Feedback: {self.writtenFeedback}\n'
-        output += f'TL Grade: {self.grade}  '
-
-        return output
-    def __repr__(self):
-        return str(self)
-
-# 2 # Student
-class Student:
-    def __init__(self, name, studentFeedback = [], tl_ratings = []):
-        self.name = name
-        self.studentFeedback = studentFeedback
-        self.tl_ratings = tl_ratings
-    def __str__(self):
-        output = f'-*- STUDENT CLASS -*-\n'
-        output += f'Name: {self.name}\n'
-        output += f'Student Feedback: {self.studentFeedback} \n {len(self.studentFeedback)} entries\n'
-        output += f'TL Ratings: {self.tl_ratings} \n {len(self.tl_ratings)} entries'
-
-        return output
-    def __repr__(self):
-        return str(self)
-
-# --------------- #
-
-# -*- START -*- #
-# 1 # Set user input prompt
-userInputPrompt = f'Please enter the absolute file path for your downloaded .cvs \n'
-userInputPrompt += f'Note: This can be found by dragging the file from your downloads and dropping it into your terminal\n'
-userInputPrompt += f'Enter File Path Here:  '
-
-# 2 # Get absolute file path from user
-userFile = input(userInputPrompt)
-print('User Entered Absolute File Path: ',userFile, type(userFile))
 
 # 3 # Analyze Feedback Function
 def analyzeFeedback(feedback = [], uniqueStudents = []):
@@ -96,7 +34,7 @@ def analyzeFeedback(feedback = [], uniqueStudents = []):
 
             # 3.2.2 # Calculate Overall Average
             overall_TL_Grade = count / len(feedback) 
-            print(overall_TL_Grade)
+            # print(overall_TL_Grade)
 
         # 3.3 # Fill unique students parameter
         for i in feedback:
@@ -122,17 +60,32 @@ def analyzeFeedback(feedback = [], uniqueStudents = []):
                     
                 # 3.3.1.3 # Use Unique Student Name & Unique Student Variables To Make New Student & Append to Unique Students List
                 newStudent = Student(i.student, list_of_studentFeedback, list_of_grades)
+                print('THIS IS A NEW STUDENT YO HOMIE',newStudent)
                 uniqueStudents.append(newStudent)
+                print(len(uniqueStudents))
 
-    for i in uniqueStudents:
-        print('UNIQUE STUDENTS',i)
+        # 3.4 # Setting Students Individual AVG TL Grades
+        for i in uniqueStudents:
+            i.get_student_AVG_rating()
 
-    print('STUDENT 0',uniqueStudents[0])
-    print('STUDENT 5',uniqueStudents[5])
+
+    # for i in uniqueStudents:
+    #     print('UNIQUE STUDENTS',i)
+
+    # print('STUDENT 0',uniqueStudents[0])
+    # print('STUDENT 5',uniqueStudents[5])
     print('OVERALL AVG TL GRADE',overall_TL_Grade)
 
-    # RETURN
-    return overall_TL_Grade
+    # 3.2 # Prompt for REPL
+    prompt_REPL = f'Welcome to your student explorer REPL\n'
+    prompt_REPL += f'Please choose a number between 0 & {len(uniqueStudents) - 1}'
+
+    # 3.3 # Get Student Number From User
+    userInput_REPL = input(prompt_REPL)
+    print(userInput_REPL)
+
+    # while True: 
+    #     if 
 # # --------------- #
 
 # -*- RUN FUNCTION -*- #
