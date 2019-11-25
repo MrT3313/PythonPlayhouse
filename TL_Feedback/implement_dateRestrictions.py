@@ -14,14 +14,21 @@ def implement_dateRestrictions(fullList, uniqueStudents):
                     listToReturn.append(z)
         else:
             for x in fullList:
+                print(x)
                 if x[1] == i.name:
                     # Get and Split Date String
-                    itemDate_split = x[0].split('/')
+                    print(x[0])
+                    # itemDate_split = x[0].split('/')
+                    itemDate_split = x[0].split('-')
+                    print(itemDate_split)
 
                     # Prepare Date Integers
-                    itemDate_year = int(itemDate_split[2])
-                    itemDate_month = int(itemDate_split[0])
-                    itemDate_day = int(itemDate_split[1])
+                    # itemDate_year = int(itemDate_split[2])
+                    # itemDate_month = int(itemDate_split[0])
+                    # itemDate_day = int(itemDate_split[1])
+                    itemDate_year = int(itemDate_split[0])
+                    itemDate_month = int(itemDate_split[1])
+                    itemDate_day = int(itemDate_split[2])
 
                     # Create Date Object
                     itemDate = datetime(
