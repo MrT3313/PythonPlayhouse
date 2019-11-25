@@ -16,9 +16,8 @@ Python3
 3. At the bottom left of the component click the export button. This will give you a `.csv` of your data
 4. Find the absolute path to your downloaded `.csv` data. You can do this by clicking and dragging from your file explorer / finder into an open terminal window
 
-5. Download the `TL_Feedback` directory from the most recent commit titled: VERSION: # 
-6. Download zip file of codebase at this point in the git history
-7. In your terminal navigate into the `TL_Feedback` directory and run `python3 __mainFunction__.py`
+5. Download ZIP of the repo from the most recent commit titled: VERSION: # 
+6. In your terminal navigate into the `TL_Feedback` directory and run `python3 __mainFunction__.py`
 
 7. Follow prompts
 
