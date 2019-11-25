@@ -16,7 +16,7 @@ userInputPrompt += f'Note: This can be found by dragging the file from your down
 userInputPrompt += f'Enter File Path Here:  '
 
 # 1.2 # Send Prompt
-userFilePath = input(userInputPrompt)
+userFilePath = input(userInputPrompt).replace("\"", "")
 print('User Entered Absolute File Path: ',userFilePath, type(userFilePath))
 
 # 2 # Open & Read .csv Data --> returns List
