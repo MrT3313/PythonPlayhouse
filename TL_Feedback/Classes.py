@@ -20,11 +20,12 @@ class Feedback:
 
 # 2 # Student
 class Student:
-    def __init__(self, name, studentFeedback = [], tl_ratings = [], student_avg_tlrating = 'n/a', startDate = None, endDate = None):
+    def __init__(self, name, studentFeedback = [], tl_ratings = [], student_avg_tlrating = 'n/a', overall_avg_tlrating = 0, startDate = None, endDate = None):
         self.name = name
         self.studentFeedback = []
         self.tl_ratings = []
         self.student_avg_tlrating = student_avg_tlrating
+        self.overall_avg_tlrating = overall_avg_tlrating 
         self.startDate = startDate
         self.endDate = endDate
 
@@ -48,7 +49,8 @@ class Student:
         output += f'Name: {self.name}\n'
         output += f'Student Feedback: {self.studentFeedback} \n {len(self.studentFeedback)} entries\n'
         output += f'TL Ratings: {self.tl_ratings} \n {len(self.tl_ratings)} entries \n'
-        output += f'AVG TL Rating: {self.student_avg_tlrating}\n'
+        output += f'STUDENT AVG TL Rating: {self.student_avg_tlrating}\n'
+        output += f'OVERALL AVG TL Rating: {self.overall_avg_tlrating}\n'
         
         output += f'START DATE: {self.startDate}\n'
         output += f'END DATE: {self.endDate}\n'

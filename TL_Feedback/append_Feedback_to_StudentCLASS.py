@@ -6,10 +6,12 @@ def append_Feedback_to_StudentCLASS(userFile, uniqueStudents):
             # print(i.name)
             # print(x[1])
             if x[1] == i.name:
-                print('found')
-                print(x)
                 i.studentFeedback.append(x[2])
                 i.tl_ratings.append(x[3])
+    
+    for i in uniqueStudents:
+        # print(dir(i)) # List all methods on CLASS OBJECT
+        i.get_student_AVG_rating()
 
     return uniqueStudents
 
