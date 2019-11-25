@@ -2,7 +2,7 @@ import csv
 
 def open_and_read_CSV(userFilePath):
     # print('INSIDE: open&read csv')
-    with open(userFilePath, 'r') as userCSV:
+    with open(userFilePath, 'r', encoding="utf-8") as userCSV:
         reader = csv.reader(userCSV)
         # print('reader from function: ', reader, type(reader))
 
