@@ -39,8 +39,9 @@ uniqueStudents = set_dateRestrictions(uniqueStudents)
 print('__mainFunction__: CLASS Students w/ Date Restrictions type == ', type(uniqueStudents), len(uniqueStudents))
 
 # 7 # Filter userFile By Date Restrictions
-# userFile = implement_dateRestrictions(userFile, uniqueStudents)
-# print('__mainFunction__: Date Restricted UserFile type == ', type(userFile), len(userFile))
+userFile = implement_dateRestrictions(userFile, uniqueStudents)
+print('__mainFunction__: Date Restricted UserFile type == ', type(userFile), len(userFile))
+
 
 
 
