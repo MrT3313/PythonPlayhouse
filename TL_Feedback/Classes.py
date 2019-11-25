@@ -47,7 +47,12 @@ class Student:
     def __str__(self):
         output = f'-*- STUDENT CLASS -*-\n'
         output += f'Name: {self.name}\n'
-        output += f'Student Feedback: {self.studentFeedback} \n {len(self.studentFeedback)} entries\n'
+
+        output += f'Student Feedback:\n'
+        for i in self.studentFeedback:
+            if len(i) != False:
+                output += f'-- {i}\n'
+
         output += f'TL Ratings: {self.tl_ratings} \n {len(self.tl_ratings)} entries \n'
         output += f'STUDENT AVG TL Rating: {self.student_avg_tlrating}\n'
         output += f'OVERALL AVG TL Rating: {self.overall_avg_tlrating}\n'
