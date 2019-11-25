@@ -27,8 +27,15 @@ class Student:
         self.student_avg_tlrating = student_avg_tlrating
         self.startDate = startDate
         self.endDate = endDate
+
+    def check_dates(self):
+        if self.startDate is not None and self.endDate is not None:
+            return False if self.startDate >= self.endDate else True
+        else: 
+            return True
+
     def get_student_AVG_rating(self):
-        if len(self.tl_ratings) != 0:
+        if len(self.tl_ratings) is not 0:
             count = 0
             for i in self.tl_ratings:
                 count += int(i)
