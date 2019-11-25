@@ -22,8 +22,8 @@ class Feedback:
 class Student:
     def __init__(self, name, studentFeedback = [], tl_ratings = [], student_avg_tlrating = 'n/a', startDate = None, endDate = None):
         self.name = name
-        self.studentFeedback = studentFeedback
-        self.tl_ratings = tl_ratings
+        self.studentFeedback = []
+        self.tl_ratings = []
         self.student_avg_tlrating = student_avg_tlrating
         self.startDate = startDate
         self.endDate = endDate
