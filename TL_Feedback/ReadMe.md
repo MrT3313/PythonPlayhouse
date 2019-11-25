@@ -1,5 +1,5 @@
 # Welcome to Lambda TL Feedback!
-Mapped to Lambda Dashboard export available as of 11/23/19
+Mapped to Lambda Dashboard export available as of 11/24/19
 
 ## Data Used:
     - Date Submitted: col title === Submitted At (Simple Date)
@@ -19,20 +19,6 @@ Python3
 6. In your terminal navigate into the `TL_Feedback` directory and run `python3 __mainFunction__.py`
 7. Follow prompts
 
-## ACTIONS
-    1. Get Unique Students
-    2. REPL Query TL for students added part way through your section 
-        # Notes: I believe that you currently are able to see (and get as your export) all of the retros for that student currently in the system. 
-            #  AKA: reviews are mapped to the CURRENT TL not a specific TL??
-    3. Update Unique Students
-
-## Print
-    # [x] overall avg rating
-    # [] Individual Students
-        # 1. Name
-        # 2. List of written feedback
-        # 3. List of TL grades
-        # 4. Avg TL grade from unique student
-
-## Export 
-    # standard excel file --> .xlsx
+## Dates
+Started: 11/23/2019
+V1: 11/24/2019
