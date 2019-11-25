@@ -1,6 +1,7 @@
 from datetime import datetime
 
 def implement_dateRestrictions(fullList, uniqueStudents):
+    print(len(fullList))
     listToReturn = []
 
     for i in uniqueStudents:
@@ -14,13 +15,17 @@ def implement_dateRestrictions(fullList, uniqueStudents):
                     listToReturn.append(z)
         else:
             for x in fullList:
-                print(x)
+                # print(x)
                 if x[1] == i.name:
+                    print(x[1])
+                    print(i.name)
+
+                    
                     # Get and Split Date String
                     print(x[0])
                     # itemDate_split = x[0].split('/')
                     itemDate_split = x[0].split('-')
-                    print(itemDate_split)
+                    print('ITEM SPLIT',itemDate_split)
 
                     # Prepare Date Integers
                     # itemDate_year = int(itemDate_split[2])
@@ -36,11 +41,18 @@ def implement_dateRestrictions(fullList, uniqueStudents):
                         month=itemDate_month,
                         day=itemDate_day
                     )
-                    # print('NEW DATE OBJECT: itemDate',itemDate)
+                    print('NEW DATE OBJECT: itemDate',itemDate)
+                    print('START DATE:', i.startDate)
+                    print('END DATE',i.endDate)
+
+                    print(itemDate <= i.endDate)
+                    print(itemDate >= i.startDate)
 
                     # Date Conditional
                     if itemDate <= i.endDate and itemDate >= i.startDate:
-                        # print('PUSH THIS THROUGH')
+                        print('PUSH THIS THROUGH')
                         # print(x)
                         listToReturn.append(x)
+
+    print(len(listToReturn))
     return listToReturn

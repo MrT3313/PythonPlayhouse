@@ -93,7 +93,7 @@ def set_dateRestrictions(uniqueStudents):
                             print(f'Please enter a number between 1 & {len(uniqueStudents)}')
 
                 # 3.3.4 # Set Start Date
-                student_startDate = input(f"What is {uniqueStudents[studentSelection].name}'s Start Date? (Format: M/D/YY)  ")
+                student_startDate = input(f"What is {uniqueStudents[studentSelection].name}'s Start Date? (Format: M/D/YYYY)  ")
                 print(student_startDate)
 
                 student_startDate_split = student_startDate.split('/')
@@ -113,12 +113,12 @@ def set_dateRestrictions(uniqueStudents):
 
                 # 3.3.5 # Set End Date
                 # Set Prompt
-                student_endDate_prompt = f"What is {uniqueStudents[studentSelection].name}'s End Date? (Format: M/D/YY)\n" 
+                student_endDate_prompt = f"What is {uniqueStudents[studentSelection].name}'s End Date? (Format: M/D/YYYY)\n" 
                 student_endDate_prompt += f"If {uniqueStudents[studentSelection].name} is still currently your student press 'P':  "
 
                 # Query User
                 student_endDate = input(student_endDate_prompt)
-                print(student_startDate)
+                print(student_endDate)
 
                 # End Date Conditional For Present Student
                 if student_endDate == "P" or student_endDate == "p":
