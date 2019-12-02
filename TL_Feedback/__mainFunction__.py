@@ -24,34 +24,44 @@ userFile = open_and_read_CSV(userFilePath)
 # print('__mainFunction__: userFile',userFile)
 print('__mainFunction__: readCSV type == ', type(userFile), len(userFile))
 
-# 3 # Filter For Specific Columns
+# TODO:
+# 3 # Check .csv for columns
+## What column headers are you need?
+## Do those headers exist? 
+    # NO: 
+        # Stop Program
+    # YES: 
+        # What index do these headers map to in the .csv output
+
+# 4 # Filter For Specific Columns
+# TODO:
+## Pass in userFile & the mapped columns & indexes from #3
 userFile = getColumns(userFile)
 print('__mainFunction__: Filtered UserFile type == ', type(userFile), len(userFile))
 
-# 4 # Get Unique Students
+# 5 # Get Unique Students
 uniqueStudents = getUnique(userFile)
 print('__mainFunction__: Unique Students type == ', type(uniqueStudents), len(uniqueStudents))
 
-# 5 # Create Students w/ CLASS: Student
+# 6 # Create Students w/ CLASS: Student
 uniqueStudents = makeStudents(uniqueStudents, userFile)
 print('__mainFunction__: List of CLASS Students type == ', type(uniqueStudents), len(uniqueStudents))
 
-# 6 # REPL => Update CLASS: Students startDate & endDate
+# 7 # REPL => Update CLASS: Students startDate & endDate
 uniqueStudents = set_dateRestrictions(uniqueStudents)
 print('__mainFunction__: CLASS Students w/ Date Restrictions type == ', type(uniqueStudents), len(uniqueStudents))
 
-# 7 # Filter userFile By Date Restrictions
+# 8 # Filter userFile By Date Restrictions
 userFile = implement_dateRestrictions(userFile, uniqueStudents)
 print('__mainFunction__: Date Restricted UserFile type == ', type(userFile), len(userFile))
 
-# 8 # Get Overall TL Average
+# 9 # Get Overall TL Average
 overall_AVG_TLrating = overall_TL_average(userFile, uniqueStudents)
 print('__mainFunction__: Date Restricted Overall TL Average type == ', type(overall_AVG_TLrating), overall_AVG_TLrating)
 
-# 9 # Push Feedback To CLASS: Student
+# 10 # Push Feedback To CLASS: Student
 uniqueStudents = append_Feedback_to_StudentCLASS(userFile, uniqueStudents)
 print('__mainFunction__: Completed CLASS: Student type == ', type(uniqueStudents), len(uniqueStudents))
-
 
 for i in uniqueStudents:
     print(i)
